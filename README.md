@@ -22,7 +22,7 @@ Or use the function readSudoku(path of file)
 sd := NewSudoku(readSudoku(path of file))
 ~~~
 #### Format to Read Sudoku
-Edit sudoku file, each squeare is separated by single space, empty value is represented by 0 and any other value whit the number.
+Edit sudoku file, each squeare is separated by single space, empty value is represented by 0 and any other value with the number.
 
 Example  
 
@@ -49,7 +49,7 @@ To see the solution
 sd.Print()
 ~~~
 
-And to Store the Solution in [9][9] int
+If you want to store the solution in [9][9]int
 ~~~
 if sd.Solve() {
   myArray := sd.GetState()
