@@ -59,3 +59,33 @@ if sd.Solve() {
 }
 ~~~
 
+### Example Code
+~~~~
+package main
+
+import (
+	"fmt"
+	"github.com/facuellarg/Sudoku-Solver"
+)
+
+func imprimirMatriz(matriz [9][9]int) {
+	for _, fila := range matriz {
+		for _, s := range fila {
+			fmt.Printf("%d ", s)
+		}
+		fmt.Println("")
+	}
+}
+func main() {
+
+	sd := sudoku.NewSudoku(sudoku.ReadSudoku("sudoku"))
+	fmt.Println("Estado inicial")
+	sd.Print()
+	fmt.Println("")
+	if sd.Solve() {
+		fmt.Println("Solucion")
+		imprimirMatriz(sd.GetState())
+	}
+}
+~~~
+
