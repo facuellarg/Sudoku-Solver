@@ -18,5 +18,5 @@ Example
 
 
 ## Run 
-go run *.go or
-go build and execute.
+~go run *.go ~or \n
+~go build~ and execute.
