@@ -37,3 +37,22 @@ Example
 0 9 0 0 0 0 4 0 0  
 
 ### Solve the sudoku
+
+Function Solve() return true if can resolve the sudoku and false in other case
+~~~
+sd.Solve()
+~~~
+
+To see the solution
+
+~~~
+sd.Print()
+~~~
+
+And to Store the Solution in [9][9] int
+~~~
+if sd.Solve() {
+  myArray := sd.GetState()
+}
+~~~
+
