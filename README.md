@@ -18,5 +18,11 @@ Example
 
 
 ## Run 
-~~go run *.go~~  or   
-~~go build ~~~ then execute.
+~~~
+go run *.go  
+~~~
+or   
+~~~
+go build 
+~~~ 
+then execute.
