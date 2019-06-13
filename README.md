@@ -21,8 +21,4 @@ Example
 ~~~
 go run *.go  
 ~~~
-or   
-~~~
-go build 
-~~~ 
-then execute.
+
