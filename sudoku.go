@@ -1,7 +1,6 @@
-package main
+package sudoku
 
 import (
-	//"github.com/facuellarg/problem"
 	"fmt"
 )
 
@@ -11,13 +10,11 @@ type Sudoku struct {
 	xMaximaRestriccion, yMaximaRestriccion int
 }
 
-//Casilla estructura tipo casilla
 type Casilla struct {
 	valor, fila, columna, restricciones int
 	posibilidades                       [9]bool
 }
 
-//NewCasilla retorna una nueva casilla
 func NewCasilla(fila, columna int) Casilla {
 	this := Casilla{}
 	this.fila = fila
@@ -40,8 +37,7 @@ func NewSudoku(valores [9][9]int) (sudoku Sudoku) {
 	return
 }
 
-//CalcularRestriccion calcula las restricciones de una casilla dada por los indices i,j
-func CalcularRestriccion(fila, columna int, sd *Sudoku) {
+func CalculateConstrain(fila, columna int, sd *Sudoku) {
 	inicioSeccionX := (fila / 3) * 3
 	inicioSeccionY := (columna / 3) * 3
 	var seccionX, seccionY int
@@ -67,13 +63,12 @@ func CalcularRestriccion(fila, columna int, sd *Sudoku) {
 
 }
 
-//CalcularRestricciones calculas las restricciones de todas las casillas del sudoku
-func (sd *Sudoku) CalcularRestricciones() {
+func (sd *Sudoku) CalculateConstrains() {
 	var max int
 	for i := 0; i < 9; i++ {
 		for j := 0; j < 9; j++ {
 			if sd.state[i][j].valor == 0 {
-				CalcularRestriccion(i, j, sd)
+				CalculateConstrain(i, j, sd)
 				if sd.state[i][j].restricciones > max {
 					sd.xMaximaRestriccion = i
 					sd.yMaximaRestriccion = j
@@ -84,9 +79,9 @@ func (sd *Sudoku) CalcularRestricciones() {
 	}
 }
 
+//Solve solve the sudoku problem
 func (sd *Sudoku) Solve() bool {
-
-	sd.CalcularRestricciones()
+	sd.CalculateConstrains()
 	if sd.isSolved() {
 		return true
 	}
@@ -116,8 +111,8 @@ func (sd *Sudoku) isSolved() bool {
 	return true
 }
 
-//Imprimir imprime el estado actual del sudoku
-func (sd *Sudoku) Imprimir() {
+//Print imprime el estado actual del sudoku
+func (sd *Sudoku) Print() {
 	for i := 0; i < 9; i++ {
 		for j := 0; j < 9; j++ {
 			fmt.Print(sd.state[i][j].valor, " ")
@@ -125,4 +120,14 @@ func (sd *Sudoku) Imprimir() {
 		fmt.Println("")
 	}
 
+}
+
+//GetState give the state of the problem in format [9][9]int
+func (sd Sudoku) GetState() (sol [9][9]int) {
+	for i := 0; i < 9; i++ {
+		for j := 0; j < 9; j++ {
+			sol[i][j] = sd.state[i][j].valor
+		}
+	}
+	return
 }
