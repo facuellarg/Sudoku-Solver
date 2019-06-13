@@ -18,11 +18,11 @@ import "github.com/facuellarg/Sudoku-Solver"
 ### Created a new sudoku 
 Passing a [9][9]int
 ~~~
-sd := NewSudoku([9][9]int)
+sd := sudoku.NewSudoku([9][9]int)
 ~~~
-Or use the function readSudoku(path of file)
+Or use the function ReadSudoku(path of file)
 ~~~
-sd := NewSudoku(readSudoku(path of file))
+sd := sudoku.NewSudoku(sudoku.ReadSudoku(path of file))
 ~~~
 #### Format to Read Sudoku
 Edit sudoku file, each squeare is separated by single space, empty value is represented by 0 and any other value with the number.
