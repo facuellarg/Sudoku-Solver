@@ -15,7 +15,8 @@ go  get github.com/facuellarg/Sudoku-Solver
 ~~~
 import "github.com/facuellarg/Sudoku-Solver"
 ~~~
-### Created a new sudoku passing a [9][9]int
+### Created a new sudoku 
+Passing a [9][9]int
 ~~~
 sd := NewSudoku([9][9]int)
 ~~~
