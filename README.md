@@ -4,7 +4,10 @@ Solver for sudoku game using bactracking and constraint satisfaction problem
 
 
 ## Install 
+Run in terminal
+~~~
 go  get github.com/facuellarg/Sudoku-Solver
+~~~
 
 ## Usage
 
@@ -13,7 +16,6 @@ go  get github.com/facuellarg/Sudoku-Solver
 import "github.com/facuellarg/Sudoku-Solver"
 ~~~
 ### Created a new sudoku passing a [9][9]int
-
 ~~~
 sd := NewSudoku([9][9]int)
 ~~~
