@@ -87,5 +87,5 @@ func main() {
 		imprimirMatriz(sd.GetState())
 	}
 }
-~~~
+
 
