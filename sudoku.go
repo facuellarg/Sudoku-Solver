@@ -135,7 +135,8 @@ func (sd Sudoku) GetState() (sol [9][9]int) {
 	return
 }
 
-func readSudoku(input string) [9][9]int {
+//ReadSudoku Read a flie passing the path and return a [9][9]int
+func ReadSudoku(input string) [9][9]int {
 	var matriz [9][9]int
 	text, err := ioutil.ReadFile(input)
 	if err != nil {
